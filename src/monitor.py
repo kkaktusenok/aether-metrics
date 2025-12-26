@@ -1,6 +1,14 @@
 import psutil
 import json
 import time
+import os
+
+raw_interval = os.getenv("MONITOR_INTERVAL",5)
+
+try:
+    interval = float(raw_interval)
+except:
+    interval = 5
 
 try:
     while True:
@@ -11,7 +19,7 @@ try:
         }
 
         print(json.dumps(data,indent=4))
-        time.sleep(5)
+        time.sleep(interval)
 
 except KeyboardInterrupt:
     print("\n Monnitoring stoped")
