@@ -3,6 +3,8 @@ FROM python:3.13-slim
 ENV PYTHONUNBUFFERED=1
 ENV MONITOR_INTERVAL=1
 
+ENV DISCORD_TOKEN=""
+
 WORKDIR /app
 
 COPY src/requirements.txt .
